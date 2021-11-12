@@ -18,7 +18,7 @@ int main()
 	{
 		for (int j = 1; j <= col; j++)
 		{
-			cout << "*"; 
+			cout << "* "; 
 		}
 		cout << endl;	
 	}	
@@ -61,9 +61,106 @@ int main()
 	{
 		for (int j = 1; j<=i; j++)
 		{
-			cout << "*";
+			cout << "* ";
 		}
 		cout << endl;
 	}
+	
+	
+	// Inverted Half Pyramid using numbers
+	
+	int m;
+	
+	cout << "\n\t\t\t\tHalf Inverted Pyramid Program using numbers" << endl;
+	cout << "\nEnter number of Rows: ";
+	cin >> m;
+	
+	cout << "\n";
+	
+	for (int i = 1; i<=m; i++)
+	{
+		for (int j = 1; j<=i; j++)
+		{
+			cout << i << " ";
+		}
+		cout << endl;
+	}
+	
+	
+	// Floyd Pyramid
+	
+	int o;
+	int count = 1;
+	
+	cout << "\n\t\t\t\tFloyd Pyramid Program" << endl;
+	cout << "\nEnter number of Rows: ";
+	cin >> o;
+	
+	cout << "\n";
+	
+	for (int i = 1; i<=o ; i++)
+	{
+		for (int j = 1; j<=i; j++)
+		{
+			cout << count << " ";
+			count++; 
+		}
+		cout << endl;
+	}
+	
+	
+	 // 0, 1  Pyramid Program
+	
+	 int p;
+	 
+	 cout << "\n\t\t\t\t0, 1  Pyramid Program" << endl;
+	 cout << "Enter number: ";
+	 cin >> p;
+	 
+	 cout << "\n";
+	 
+	 for (int i = 1; i<=p; i++)
+	 {
+	 	for (int j = 1; j<=i; j++)
+	 	{
+	 		if ((i+j)%2==0)
+	 		{
+	 			cout << "1 ";
+	 		}
+	 		else
+	 		{
+	 			cout << "0 ";
+	 		}
+	 	}
+	 	cout << endl;
+	 }
+	 
+	 
+	 // Rhombus Pattern Program
+	
+	 int q;
+	 
+	 cout << "\n\t\t\t\tRhombus Pattern Program" << endl;
+	 cout << "Enter number: ";
+	 cin >> q;
+	 
+	 cout << "\n";
+	 
+	 for (int i = 1; i<=q; i++)
+	 {
+	 	for (int j = 1; j<=q-i; j++)
+	 	{
+	 		cout << " ";
+	 	}
+	 	
+	 	for (int j = 1; j<=q; j++)
+	 	{
+	 		cout << "* ";
+	 	}
+	 	cout << endl;
+	 }
+	
+	
+	
 	
 }

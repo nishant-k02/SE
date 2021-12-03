@@ -85,7 +85,50 @@ void deletion(node* &head, int pos)
     }
     
     delete temp;
+}
+
+int length(node *head)
+{
+    int l = 0;
+    node* temp = head;
     
+    while (temp != NULL)
+    {
+        l++;
+        temp = temp->next;
+    }
+    return l;
+}
+
+node* kappend(node* &head, int k)
+{
+    node* newHead;
+    node* newTail;
+    node* tail = head;
+    
+    int l = length(head);
+    k = k%l;
+    int count = 1;
+    while (tail->next != NULL)
+    {
+        if (count == l-k)
+        {
+            newTail = tail;
+        }
+        
+        if (count == l-k+1)
+        {
+            newHead = tail;
+        }
+        
+        tail = tail->next;
+        count++;
+    }
+     
+    newTail->next = NULL;
+    tail->next = head;
+    
+    return newHead;
 }
 
 void display(node* head)
@@ -119,5 +162,9 @@ int main()
     cout << "After Deletion: " << endl;
     
     display(head);
+    
+    cout << "After appending k nodes: " << endl;
+    node* newHead = kappend(head, 3);
+    display(newHead);
 }
 

@@ -97,6 +97,30 @@ void deletion(node* &head, int pos)
     
 }
 
+                            // For Singly Linked List
+                
+void evenAfterOdd(node* &head)
+{
+    node* odd = head;
+    node* even = head->next;
+    node* evenStart = even;
+    
+    while (odd->next != head && even->next != head)
+    {
+        odd->next = even->next;
+        odd = odd->next;
+        even->next = odd->next;
+        even = even->next;
+    }
+    
+    odd->next = evenStart;
+    if (odd->next != NULL)
+    {
+        even->next = NULL;
+    }
+    
+}
+
 void display(node* head)
 {
     cout << endl;
@@ -150,6 +174,7 @@ int main()
 	    cout << "2. Insert At Head: " << endl;
 	    cout << "3. Delete any node: " << endl;
 	    cout << "4. Delete At Head: " << endl;
+	    cout << "5. Display Even Odd Linked List: " << endl;     // For Singly Linked List
 	    cout << "\n\t\t\t\t\tEnter the Choice: ";
 	    cin >> c;
 	    
@@ -198,6 +223,14 @@ int main()
 	    	    
 	    	cout << "\nLinked List after deleting element from Head: ";
 	    	display(head);
+	    	
+	    	break;
+	    	
+	    	case 5:
+	    	
+	    	cout << "Even Odd Linked List is: ";
+	    	display(head);
+	   // 	evenAfterOdd(head);
 	    	
 	    	break;
 	    }

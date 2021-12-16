@@ -1,73 +1,34 @@
 #include <iostream>
-
+#include <stack>
 using namespace std;
 
-#define n 100
-class stack 
+void reverseSentence(string s)
 {
-    int* arr;       // initilized dynamically
-    int top;
+    stack<string> st;
     
-    public:
-        
-        stack()
+    for (int i = 0; i < s.length(); i++)
+    {
+        string word = "";
+        while (s[i] != ' ' && i < s.length())
         {
-            arr = new int[n];
-            top = -1;
+            word += s[i];
+            i++;
         }
         
-        void push(int x) 
-        {
-            if (top == n-1)
-            {
-                cout << "Stack Overflow";
-                return;
-            }
-            
-            top++;
-            arr[top] = x;
-        }
-        
-        void pop()
-        {
-            if (top == -1)
-            {
-                cout << "No element to Pop!!" << endl;
-                return;
-            }
-            
-            top--;
-        }
-        
-        int Top()
-        {
-            if (top == -1)
-            {
-                cout << "No element in Stack!!" <<endl;
-                return -1;
-            }
-            return arr[top];
-        }
-        
-        bool empty()
-        {
-           return top == -1; 
-        }
-};
+        st.push(word);
+    }
+    while (!st.empty())
+    {
+        cout << st.top() << " ";
+        st.pop();
+    }    
+    
+    cout << endl;
+}
 
 int main()
 {
-     stack st;
-     st.push(1);
-     st.push(2);
-     st.push(3);
-     cout << st.Top() << endl;
-     st.pop();
-     cout << st.Top() << endl;
-     st.pop();
-     st.pop();
-     st.pop();
-     
-     cout << st.empty()<< endl;
+     string s = "Hey, how are you doing? ";
+     reverseSentence(s);
     return 0;
 }
